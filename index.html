@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakruthi M C </title>
+    
+    <style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1e1e1e;
+    font-family: sans-serif;
+    color: #a0a0a0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+.navbar {
+    border-bottom: 2px solid #3a3a3a;
+    margin-bottom: 20px;
+    padding-bottom: 20px;;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.main-container{
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
+    padding-top: 40px;
+    margin: auto;
+}
+
+.sidebar{
+    height: 90vh;
+    background-color:#2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 16px;
+    padding: 40px;
+    position: sticky;
+    top: 40px;
+}
+
+.main-content{
+    background-color:#2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.profile{
+    text-align: center;
+}
+
+
+.profile img{
+    height: 120px;
+    width: 120px;
+    border: 1px solid #3a3a3a;
+    border-radius: 120px;
+}
+
+.profile h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #e0e0e0;
+}
+
+.profile p{
+    background-color: #1e1e1e;
+    padding: 5px 15px;
+    color: #FFBF00;
+    border: 1px solid #3a3a3a;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+
+
+
+.contact{
+    margin-top: 30px;
+    border-top: 2px solid #3a3a3a;
+    padding-top:20px;
+}
+
+.label{
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+}
+
+.value{
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.email,.phone{
+    margin-bottom: 15px;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #a0a0a0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.active, nav a:hover{
+    color: #FFBF00;
+}
+
+
+
+.heading{
+    color: #e0e0e0;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.heading2{
+    color: #e0e0e0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* .hobbies{
+    color: #e0e0e0;
+    font-size: 2rem;
+    text-align: center;
+} */
+.line{
+    width: 60px;
+    height: 5px;
+    background-color: #FFBF00;
+    margin-bottom: 15px;
+}
+
+.content{
+    text-align: justify;
+    color: #a0a0a0;
+
+}
+
+
+#about{
+    margin-bottom: 40px;
+}
+
+
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(120px,1fr));
+    gap: 30px;
+}
+
+.item{
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #3a3a3a;
+    background-color: #1e1e1e;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img{
+    height: 48px;
+    width: 48px;
+    filter: invert(75%) sepia(50%) saturate(1000%) hue-rotate(350deg) brightness(110%) contrast(101%);
+    margin-bottom: 15px;
+}
+
+.item h3{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.item:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#education{
+    margin-top: 30px;
+
+    
+}
+
+.edtech{
+    position: relative;
+    margin-top: 20px;
+}
+
+.year{
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+}
+
+.degree{
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.college{
+    font-style: italic;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+
+.work{
+    color: #a0a0a0;
+}
+
+.edfirst, .edsecond{
+    margin-bottom: 30px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.goal{
+    height: 15px;
+    width: 15px;
+    border: 3px solid #FFBF00;
+    border-radius: 50%;
+    position: absolute;
+    top:5px;
+    left: 0px;
+    z-index: 5;
+}
+
+.liner{
+    position: absolute;
+    width: 2px;
+    top:0px;
+    bottom: 0px;
+    left: 5px;
+    border: 2px solid #3a3a3a;
+}
+
+.project-container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:25px;
+}
+
+.project{
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    border: 1px solid #3a3a3a;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+}
+
+.project:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);;
+}
+
+.project img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.1s ease-out;
+}
+
+.card{
+    padding: 20px;
+    position: relative;
+    background: #1e1e1e;
+}
+
+.card h3{
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.card p{
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card span{
+    background-color: rgba(255, 191, 0, 0.1);
+    color: #FFBF00;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+}
+
+.reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+.reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+@media screen and (max-width:1200px) {
+    .main-container{
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .sidebar{
+        position: static;
+        height: auto;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .project-container{
+        grid-template-columns: 1fr;
+    }
+
+    #navigation nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .sidebar{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+}
+#resume { margin-bottom: 60px; }
+        .resume-card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #3a3a3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .resume-info h3 { color: #e0e0e0; margin-bottom: 10px; }
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: transparent;
+            color: #FFBF00;
+            border: 2px solid #FFBF00;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            background-color: #FFBF00;
+            color: #1e1e1e;
+            transform: translateY(-3px);
+        }
+        @media screen and (max-width: 750px) {
+            .resume-card { flex-direction: column; text-align: center; }
+        }
+        #head{
+            text-align: center;
+        }
+</style>
+
+
+
+</head>
+<body>
+    <header id="Portfolio"> 
+        
+        <nav class="navbar">
+            <a href="#about" class="active">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#portfolio">Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="./prakruthi.jpeg" alt="" >
+                <h2>Prakruthi M C</h2>
+                <p>I'm a Aspiring Frontend Developer | Fresher with a foundation on HTML, CSS, and JavaScript. I am eager to apply my skills and learn in a real world environment.</p>
+            </div>
+            <div class="contact">
+                  <div class="email">
+                    <h3 class="label">Email</h3>
+                    <a href="prakruthimc620@gmail.com" class="value">prakruthimc620@gmail.com</a>
+                  </div>
+                  <div class="phone">
+                    <h3 class="label">Phone</h3>
+                    <a href="tel:8310146883" class="value">8310146883</a>
+                  </div>
+                  <div class="location">
+                    <h3 class="label">Location</h3>
+                    <p class="value">Mandya,Karnataka</p>
+                  </div>
+                </div>
+        </div>
+        <div class="main-content">
+             <div id="about" class="reveal">
+                <h2 class="heading">About Me</h2>
+                <div class="line"></div>
+                <p class="content">I am a passionate entry level Frontend Developer with a foundation in HTML, CSS, and JavaScript. I enjoy creating responsive and user-friendly web interfaces and continously improving my skills. I am currently enhancing my skills in frontend development and looking for opportunities to grow as a fresher.</p>
+             </div>
+
+            
+             <div id="skills" class="reveal">
+                <h2 class="heading">Skills</h2>
+                <div class="line"></div>
+                <div class="grid-container">
+                    <div class="item">
+                        <img src="https://simpleicons.org/icons/html5.svg" alt="">
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="item">
+                        <img src="https://simpleicons.org/icons/css.svg" alt="">
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="item">
+                        <img src="https://www.svgrepo.com/show/373697/java.svg" alt="">
+                        <h3>JAVA</h3>
+                    </div>
+                    <div class="item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/640px-Python_logo_01.svg.png" alt="">
+                        <h3>Python</h3>
+                    </div>
+                    <div class="item">
+                        <img src="https://www.svgrepo.com/show/331760/sql-database-generic.svg" alt="">
+                        <h3>SQL</h3>
+                    </div>
+                    </div>
+                </div>
+             </div><br><br>
+
+            
+             <div id="education" class="reveal">
+                <h2 class="heading">Education</h2>
+                <div class="line"></div>
+                <div class="edtech">
+
+                    <div class="edfirst">
+                        <div class="year">2022-2025</div>
+                        <h3 class="degree">Bachelor of Engineering in ECE</h3>
+                        <p class="college">P.E.S College of Engineering, Mandya</p>
+                        <p class="work">Developed knowldge on circuita and network and also gained knowledge on software development. Doing a final year project on Smart IoT-Enabled Parcel Sorting System Using ESP32 with Color and RFID Detection.</p>
+                        <p class="work">Learning Creating website using HTML and CSS . Created a spotify website using HTML and CSS</p>
+                        <p class="work">CGPA : 8.09</p>
+                        <div class="goal"></div>
+                    </div>
+                    <div class="edsecond">
+                        <div class="year">2019-2021</div>
+                        <h3 class="degree">Pre University</h3>
+                        <p class="college">Mandavya Excellence PU College</p>
+                        <p class="work">Done a PCMB course gaining insights on all subjects</p>
+                        <p class="work">PERCENT : 94.83%</p>
+                        <div class="goal"></div>
+                    </div>
+
+                    <div class="liner"></div>
+                </div>
+            </div><br><br>
+            
+            
+             <div id="portfolio">
+                <h2 class="heading ">Portfolio</h2>
+                <div class="line reveal"></div>
+                <h3 class="heading2 reveal">Projects</h3>
+                <div class="project-container">
+                    <div class="project ">
+                        <img src="https://i.ytimg.com/vi/2QMOwJ3-1zM/maxresdefault.jpg" alt="">
+                        <div class="card">
+                            <h3>Jarvis Virtual Assistant</h3>
+                            <p>Is a voice controlled AI assistant that can listen to commands, understand them and perform tasks.</p>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div class="project ">
+                        <img src="https://miro.medium.com/v2/resize:fit:1200/1*LFD_2Rwpk_UyF1L1xotf9g.png" alt="">
+                        <div class="card">
+                            <h3>Spotify Clone</h3>
+                            <p>Is a music streaming web/app that looks and behaves like spotify.</p>
+                            <span>HTML</span><span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="project ">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.VBO18LmfN6L8n1y9JsD41AHaEK?pid=Api&P=0&h=180" alt="">
+                        <div class="card">
+                            <h3>I2C Protocol</h3>
+                            <p>Is a serial communication protocol used to connect microcontrollers using only two wires.</p>
+                            <span>System Verilog</span>
+                        </div>
+                    </div>
+                    <div class="project ">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.MiEhlS5MJFBjIFu65eDBqwHaEK?pid=Api&P=0&h=180" alt="">
+                        <div class="card">
+                            <h3>Smart IoT-Enabled Parcel Sorting System Using ESP32 with Color and RFID Detection</h3>
+                            <p>Sorting the objects based on detecting color and processing the delivery</p>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <h3 class="heading2 reveal">Hobbies</h3><br><br>
+                    <div class="project ">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.T94FLhVeqw_fYaIfMYy4-AHaFj?pid=Api&P=0&h=180" alt="">
+                        <div class="card">
+                            <h3>Drawing</h3>
+                            <p>Not a great artist but love to draw and paint.</p>
+                        </div>
+                    </div>
+                    <div class="project ">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.XAm65IMkGk5oauIuGAeIwwHaHZ?pid=Api&P=0&h=180" alt="">
+                        <div class="card">
+                            <h3>DIY Crafts</h3>
+                        </div>
+                    </div>
+                    <div class="project ">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.9x2_v_2P2tjlAFBPZkpNIQHaEK?pid=Api&P=0&h=180" alt="">
+                        <div class="card">
+                            <h3>Novels</h3>
+                            <p>I love to get lost in a frictional world. Reading has improved my speaking skill and this is my escape.</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div> <br><br>
+        <div id="resume" class="reveal">
+                <h2 class="heading">Resume</h2>
+                <div class="line"></div>
+                <div class="resume-card">
+                    <div class="resume-info">
+                        <h3 id="head">Prakruthi M C</h3>
+                        <p>Ready to bring my frontend skills and enthusiasm to your team. You can download my full resume for a detailed look at my technical background and academic projects.</p>
+                    </div><br><br>
+                    <a href="resume.pdf" download class="download-btn">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+    </div>
+
+
+
+    <script>
+        
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        
+        document.addEventListener('mousemove', (e) => {
+            const amount = 20; 
+            const x = (e.clientX / window.innerWidth - 0.5) * amount;
+            const y = (e.clientY / window.innerHeight - 0.5) * amount;
+
+            document.querySelectorAll('.parallax-img').forEach(img => {
+                img.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+            });
+        });
+    </script>
+
+</body>
+</html>
